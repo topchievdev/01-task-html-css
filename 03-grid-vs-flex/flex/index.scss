@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, sanf-serif;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  flex-grow: 1;
+  min-width: 200px;
+  box-shadow: 2px 5px 4px 0px rgba(0, 0, 0, 0.1);
+}

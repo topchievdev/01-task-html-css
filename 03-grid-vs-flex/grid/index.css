@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Montserrat, sanf-serif;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: "card1 card2 card3 card4 card5";
+}
+
+.card {
+  background: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 5px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.card1 {
+  grid-area: card1;
+}
+
+.card2 {
+  grid-area: card2;
+}
+
+.card3 {
+  grid-area: card3;
+}
+
+.card4 {
+  grid-area: card4;
+}
+
+.card5 {
+  grid-area: card5;
+}
+
+@media (max-width: 1095px) {
+  body {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "card1 card2 card3 card4" "card5 card5 card5 card5";
+  }
+}
+@media (max-width: 875px) {
+  body {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "card1 card1 card2 card2 card3 card3" "card4 card4 card4 card5 card5 card5";
+  }
+}
+@media (max-width: 655px) {
+  body {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "card1 card2" "card3 card4" "card5 card5";
+  }
+}
+@media (max-width: 435px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas: "card1" "card2" "card3" "card4" "card5";
+  }
+}

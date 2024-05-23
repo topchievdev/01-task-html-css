@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 40px;
+}
+
+.container {
+  max-width: 940px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    'title title title'
+    'description description description'
+    'web mobile marketing';
+  justify-items: center;
+
+  width: 100%;
+  text-align: center;
+  gap: 30px;
+  color: #39362e;
+
+  &__title {
+    position: relative;
+    grid-area: title;
+    font-size: 36px;
+    letter-spacing: 10px;
+    font-weight: 600;
+  }
+
+  &__title::after {
+    content: '';
+    height: 1px;
+    width: 30%;
+    background: #000;
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__description {
+    grid-area: description;
+    max-width: 800px;
+    line-height: 1.7;
+    color: #9d9b8f;
+  }
+}
+
+.article {
+  &:nth-child(3) {
+    grid-area: web;
+  }
+
+  &:nth-child(4) {
+    grid-area: mobile;
+  }
+
+  &:nth-child(5) {
+    grid-area: marketing;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 2px;
+  }
+
+  &__image-container {
+    position: relative;
+    width: 100px;
+    margin: 0 auto;
+    border: 2px solid rgb(157, 155, 143, 0.2);
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+  }
+
+  &__image {
+    position: absolute;
+    height: 35%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (min-width: 940px) {
+  .article__image-container--with-line::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 160%;
+    transform: translateX(50%);
+    background: rgb(157, 155, 143, 0.2);
+    right: -115%;
+    top: 50%;
+  }
+}
+
+@media (max-width: 830px) {
+  .container {
+    max-width: 540px;
+  }
+  .about {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-areas:
+      'title'
+      'description'
+      'web'
+      'mobile'
+      'marketing';
+  }
+  .article__description--with-line {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 80%;
+      transform: translateX(-50%);
+      background: rgb(157, 155, 143, 0.2);
+      top: 130%;
+      left: 50%;
+    }
+  }
+}
